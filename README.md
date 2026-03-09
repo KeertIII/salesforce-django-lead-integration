@@ -62,15 +62,22 @@ Lead Owner assigned automatically
 
 ---
 
+
 ## Lead Scoring Logic
 
-Example scoring rules:
+The system calculates a lead score based on key information provided in the form.
 
-Business Email → +20  
-Phone Number → +10  
-Company Name Length > 5 → +10
+### Scoring Rules
 
-High score leads get higher priority.
+- Business Email (non-gmail/yahoo/hotmail) → **+40**
+- Personal Email (gmail/yahoo/hotmail) → **+15**
+- Company Name Length > 5 → **+25**
+- Phone Number Provided → **+25**
+
+### Lead Assignment Logic
+
+The calculated score helps determine lead priority and enables automatic routing to the appropriate users inside Salesforce.
+Higher scoring leads are prioritized for faster follow-up..
 
 ---
 
