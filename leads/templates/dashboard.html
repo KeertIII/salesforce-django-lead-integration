@@ -1,0 +1,28 @@
+<h2>CRM Dashboard</h2>
+
+<canvas id="leadFunnelChart"></canvas>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+
+fetch("/dashboard-data/")
+.then(response => response.json())
+.then(data => {
+
+    const ctx = document.getElementById('leadFunnelChart');
+
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: data.labels,
+            datasets: [{
+                label: 'Leads by Status',
+                data: data.values
+            }]
+        }
+    });
+
+});
+
+</script>
